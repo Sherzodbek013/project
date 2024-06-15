@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ваша корзина</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="cart.html">Корзина</a></li>
+                <li><a href="reg.html">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cart">
+        <h2>Список товаров в корзине</h2>
+        <div id="cart-items" class="cart-items"></div>
+        <div id="cart-total" class="cart-total"></div>
+        <div class="cart-actions">
+            <button class="btn-clear" onclick="clearCart()">Очистить корзину</button>
+            <a href="form.html" class="btn-checkout">Оформить заказ</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Магазин одежды. Все права защищены.</p>
+        <a href="index.html">На главную</a>
+    </footer>
+
+    <script src="scripts/cart.js"></script>
+</body>
+</html>
+
+
+

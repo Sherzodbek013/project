@@ -1,0 +1,163 @@
+/* Обнуление отступов и шрифтов */
+body, h1, h2, h3, p, ul, li, a, form, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Основные стили */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url();
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul li.right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+h1, h2 {
+    margin: 10px 0;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.product, .cart-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+.product img, .cart-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.product h3, .cart-item h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.product .price, .cart-item .price {
+    font-size: 16px;
+    color: #333;
+}
+
+.product button, .cart-item button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover, .cart-item button:hover {
+    background-color: #555;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item .item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item .item-details img {
+    margin-right: 20px;
+    width: 100px;
+}
+
+.cart-item .item-details div {
+    flex: 1;
+}
+
+.cart-actions {
+    margin-top: 20px;
+}
+
+.btn-clear, .btn-checkout {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-clear:hover, .btn-checkout:hover {
+    background-color: #555;
+}
+
+.btn-quantity {
+    padding: 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-quantity:hover {
+    background-color: #555;
+}
+
+.btn-remove {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    background-color: darkred;
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин одежды</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в наш магазин одежды!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="cart.html">Корзина</a></li>
+                <li class="right"><a href="reg.html">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="main">
+        <h2>Новые поступления</h2>
+        <div class="product" data-id="1" data-name="Мужская футболка Valentino" data-price="5999" data-img="https://a.lmcdn.ru/img600x866/R/T/RTLADF241601_22227251_1_v1_2x.jpg">
+            <img src="https://a.lmcdn.ru/img600x866/R/T/RTLADF241601_22227251_1_v1_2x.jpg" alt="Фото товара">
+            <h3>Мужская футболка Valentino</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 6999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="2" data-name="Название товара 2" data-price="10000" data-img="https://a.lmcdn.ru/img600x866/M/P/MP002XW01F89_22913507_2_v1.jpeg">
+            <img src="https://a.lmcdn.ru/img600x866/M/P/MP002XW01F89_22913507_2_v1.jpeg" alt="Фото товара">
+            <h3>Платье Platxx</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 10000 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="3" data-name="Джинсы трубы Apparel Denim" data-price="4499" data-img="https://ir.ozone.ru/s3/multimedia-z/c1000/6572871815.jpg">
+            <img src="https://ir.ozone.ru/s3/multimedia-z/c1000/6572871815.jpg" alt="Фото товара">
+            <h3>Джинсы трубы Apparel Denim</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 6999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <!-- Добавьте другие товары здесь -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Магазин одежды. Все права защищены.</p>
+        <a href="index.html">На главную</a>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+
+
+
+

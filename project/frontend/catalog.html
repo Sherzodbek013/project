@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #price-value {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .subcategories {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+
+        /* Анимация добавления товара в корзину */
+        .fly-animation {
+            transform: translate(200px, -200px) scale(0.1);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Каталог товаров</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="cart.html">Корзина</a></li>
+                <li><a href="reg.html">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="filters">
+        <h2>Фильтры</h2>
+        <label for="category">Категория:</label>
+        <select id="category">
+            <option value="all">Все</option>
+            <option value="men">Мужское</option>
+            <option value="women">Женское</option>
+            <!-- Добавьте другие категории здесь -->
+        </select>
+        <div id="subcategories" class="subcategories">
+            <label><input type="radio" name="subcategory" value="outerwear">Верхняя одежда</label>
+            <label><input type="radio" name="subcategory" value="jeans">Джинсы</label>
+            <label><input type="radio" name="subcategory" value="shoes">Обувь</label>
+            <label><input type="radio" name="subcategory" value="sneakers">Кроссовки</label>
+            <label><input type="radio" name="subcategory" value="shirts">Рубашки</label>
+            <!-- Добавьте другие подкатегории здесь -->
+        </div>
+
+        <label for="size">Размер:</label>
+        <select id="size">
+            <option value="all">Все размеры</option>
+            <option value="xs">XS</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <!-- Добавьте другие размеры здесь -->
+        </select>
+
+        <label for="price-range">Диапазон цен:</label>
+        <input type="range" id="price-range" min="50" max="25000" value="12500">
+        <span id="price-value">12500 ₽</span>
+    </section>
+
+    <section id="catalog">
+        <h2>Каталог товаров</h2>
+        <div class="product" data-id="1" data-name="Куртка мужская" data-price="5000" data-category="men" data-subcategory="outerwear">
+            <img src="https://ae01.alicdn.com/kf/HTB1oGQxDNGYBuNjy0Fnq6x5lpXaO.jpg" alt="Фото товара">
+            <h3>Куртка мужская Avirex fly</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 4999₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="2" data-name="Джинсы мужские" data-price="3999" data-category="men" data-subcategory="jeans">
+            <img src="https://likewot.ru/wp-content/uploads/1/e/1/1e1d32d1e485b1f644192a08a0cdb158.jpeg" alt="Фото товара">
+            <h3>Джинсы мужские</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 3999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="3" data-name="Обувь" data-price="5499" data-category="men" data-subcategory="sneakers">
+            <img src="https://a.allegroimg.com/s1024/0c73c7/3086655b4909924f3cdd3bbf472d" alt="Фото товара">
+            <h3>Кеды Vans</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 3999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="5" data-name="Рубашки" data-price="6999" data-category="men" data-subcategory="shirts">
+            <img src="https://avatars.mds.yandex.net/i?id=b4239f3a7131bca356fbb016297403fba551aecd-8400759-images-thumbs&n=13" alt="Фото товара">
+            <h3>Рубашки</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 6999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="6" data-name="Верхняя одежда" data-price="8999" data-category="men" data-subcategory="outerwear">
+            <img src="https://fashionhot.club/uploads/posts/2022-10/1666382345_3-fashionhot-club-p-verkhnyaya-muzhskaya-odezhda-stil-3.jpg" alt="Фото товара">
+            <h3>Верхняя одежда</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 8999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="7" data-name="Верхняя одежда" data-price="8999" data-category="women" data-subcategory="outerwear">
+            <img src="https://sendwear.ru/wp-content/uploads/d/1/9/d199fea2f300212b411010a3d5bfa9fa.jpeg" alt="Фото товара">
+            <h3>Верхняя одежда</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 8999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="5" data-name="Рубашки" data-price="6999" data-category="women" data-subcategory="shirts">
+            <img src="http://klublady.ru/uploads/posts/2022-03/1646206520_83-klublady-ru-p-obraz-rukav-rubashki-foto-90.jpg" alt="Фото товара">
+            <h3>Рубашки</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 6999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="3" data-name="Обувь" data-price="5499" data-category="women" data-subcategory="sneakers">
+            <img src="https://image.12storeez.com/images/800xP_90_out/uploads/images/CATALOG/dresses/
+            120936/65a1308406d30-2023-12-22-12storeez7698.jpg" alt="Фото товара">
+            <h3>Туфли</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 3999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="2" data-name="Джинсы женские" data-price="3999" data-category="women" data-subcategory="jeans">
+            <img src="https://avatars.mds.yandex.net/i?id=b0699198471e3c4a42a185d5522c24c2b97646ee-9748111-images-thumbs&n=13" alt="Фото товара">
+            <h3>Джинсы женские</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 3999 ₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <div class="product" data-id="1" data-name="Куртка женская" data-price="9999" data-category="women" data-subcategory="outerwear">
+            <img src="https://avatars.mds.yandex.net/i?id=0eebf80b50355939a93023f6fdc7586e9619eeca-12384085-images-thumbs&n=13" alt="Фото товара">
+            <h3>Куртка женская</h3>
+            <p>Описание товара...</p>
+            <span class="price">Цена: 9999₽</span>
+            <button onclick="addToCart(this)">Добавить в корзину</button>
+        </div>
+        <!-- Добавьте другие товары здесь -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Магазин одежды. Все права защищены.</p>
+        <a href="index.html">На главную</a>
+    </footer>
+
+    <script>
+        // Функция для обновления отображаемого значения цены
+        function updatePriceValue() {
+            const priceRange = document.getElementById('price-range');
+            const priceValue = document.getElementById('price-value');
+            priceValue.textContent = priceRange.value + ' ₽';
+            filterProductsByPrice(priceRange.value);
+        }
+
+        // Фильтрация товаров по цене
+        function filterProductsByPrice(maxPrice) {
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                const productPrice = parseInt(product.getAttribute('data-price'));
+                if (productPrice <= maxPrice) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // Добавление обработчика событий для ползунка
+        document.getElementById('price-range').addEventListener('input', updatePriceValue);
+
+        // Инициализация отображаемого значения при загрузке страницы
+        updatePriceValue();
+
+        document.getElementById('category').addEventListener('change', function() {
+            const subcategories = document.getElementById('subcategories');
+            if (this.value === 'men' || this.value === 'women') {
+                subcategories.classList.add('active');
+            } else {
+                subcategories.classList.remove('active');
+            }
+        });
+
+        function addToCart(button) {
+            const product = button.closest('.product');
+            const clone = product.cloneNode(true);
+            const rect = product.getBoundingClientRect();
+
+            clone.style.position = 'fixed';
+            clone.style.left = rect.left + 'px';
+            clone.style.top = rect.top + 'px';
+            clone.style.width = rect.width + 'px';
+            clone.style.height = rect.height + 'px';
+            clone.style.transition = 'transform 1s ease, opacity 1s ease';
+
+            document.body.appendChild(clone);
+
+            setTimeout(() => {
+                clone.classList.add('fly-animation');
+            }, 100);
+
+            setTimeout(() => {
+                clone.remove();
+                addProductToCart(product);
+            }, 1000);
+        }
+
+        function addProductToCart(product) {
+            const productId = product.getAttribute('data-id');
+            const productName = product.getAttribute('data-name');
+            const productPrice = product.getAttribute('data-price');
+            const productCategory = product.getAttribute('data-category');
+            const productSubcategory = product.getAttribute('data-subcategory');
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(item => item.id === productId);
+
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    category: productCategory,
+                    subcategory: productSubcategory,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</body>
+</html>
